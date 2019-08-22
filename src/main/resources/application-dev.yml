@@ -11,10 +11,10 @@ limit:
 spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/luckymoney
+    url: jdbc:mysql://localhost:3306/luckymoney?serverTimezone=UTC&characterEncoding=utf8&useUnicode=true&useSSL=true
     username: root
-    password: 0625
+    password: '0625'
   jpa:
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
     show-sql: true
