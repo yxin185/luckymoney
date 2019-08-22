@@ -48,8 +48,10 @@ public class LuckymoneyController {
     @PutMapping("/luckymoneys/{id}")
     public Luckymoney update(@PathVariable("id") Integer id,
                              @RequestParam("consumer") String consumer) {
+        // 首先要确定有人（id）来领这个红包
         Optional<Luckymoney> optional = repository.findById(id);
-        if (optional.isPresent()){
+        // 如果来领红包的人存在，我们才把钱给他，否则返回空
+        if (optional.isPresent()) {
             Luckymoney luckymoney = optional.get();
             luckymoney.setConsumer(consumer);
             return repository.save(luckymoney);

@@ -13,7 +13,6 @@ public class LuckymoneyService {
     @Autowired
     private LuckymoneyRepository repository;
 
-
     /**
      * 事务  指数据库事务InnoDB支持，但是MyISAM不支持，所以要确保数据库引擎为InnoDb
      */
